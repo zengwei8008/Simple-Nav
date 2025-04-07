@@ -33,7 +33,7 @@ export default {
     },
     content: {
       type: String,
-      default: ''
+      default: '上面是常用标签，可以表格设置排序'
     }
   }
 }
