@@ -15,7 +15,7 @@
                   <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
                   <h3 class="text-xl font-semibold mb-2">项目简介</h3>
                   <p class="text-gray-600 dark:text-gray-300">
-                    一个简洁高效的导航站点，聚合优质网络资源，日均服务用户 5000+
+                    一个简洁高效的导航站点，全AI开发，不写一行代码，也不懂一点代码。
                   </p>
                 </div>
                 
@@ -37,18 +37,47 @@
                 <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
                   <li>智能本地搜索功能</li>
                   <li>响应式侧边栏布局</li>
-                  <li>黑暗模式自动适配</li>
-                  <li>实时数据统计展示</li>
+                  <li>黑暗模式自动适配（有bug还没实现）</li>                  
                   <li>多分类资源管理</li>
+                  <li>从维基云表格获取数据，无需数据库</li>
                 </ul>
               </div>
               
+              <!-- 新增关于作者区块 -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
+                <i class="fas fa-user-circle text-red-500 text-xl mb-2"></i>
+                <h3 class="text-xl font-semibold mb-2">关于作者</h3>
+                <div class="text-gray-600 dark:text-gray-300 space-y-2">
+                  <p>🕴️ 开发者：水常（Shui Chang）</p>
+                  <p>🚀 带娃建筑师 | AI技术学习者 | 男人到老是少年</p>
+                  <p>🌐 个人博客： 
+                    <a 
+                      href="https://blog.jianzhugo.cn" 
+                      target="_blank"
+                      class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                    >
+                      建筑G博客
+                    </a>
+                  </p>
+                  <p>💰 另一AI网页： 
+                    <a 
+                      href="https://donate.jianzhugo.cn" 
+                      target="_blank"
+                      class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                    >
+                      打赏页面
+                    </a>
+                  </p>
+                </div>
+              </div>
+              
+              <!-- 数据统计区块 -->
               <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                 <i class="fas fa-chart-line text-green-500 text-xl mb-2"></i>
                 <h3 class="text-xl font-semibold mb-2">数据统计</h3>
                 <div class="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div class="text-2xl font-bold text-blue-500">1.2k+</div>
+                    <div class="text-2xl font-bold text-blue-500">完善中</div>
                     <div class="text-sm text-gray-500">收录网站</div>
                   </div>
                   <div>
@@ -56,7 +85,7 @@
                     <div class="text-sm text-gray-500">可用性监测</div>
                   </div>
                   <div>
-                    <div class="text-2xl font-bold text-green-500">24/7</div>
+                    <div class="text-2xl font-bold text-green-500">25/4</div>
                     <div class="text-sm text-gray-500">实时更新</div>
                   </div>
                 </div>
