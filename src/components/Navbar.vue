@@ -1,8 +1,9 @@
 <template>
   <nav class="h-12 sticky top-0 z-30 bg-white dark:bg-gray-800 shadow-md px-4 py-2 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-blue-500">
-      要简单导航站
-    </h1>
+    <!-- 修改为 router-link 以实现跳转 -->
+    <router-link to="/" class="text-xl font-bold text-blue-500">
+      <i class="fas fa-globe"></i> 要简单导航站
+    </router-link>
     
     <!-- 修改搜索区域显示逻辑 -->
     <div class="hidden md:flex items-center gap-2 flex-1 max-w-2xl mx-4">

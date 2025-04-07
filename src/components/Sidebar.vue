@@ -12,12 +12,13 @@
       <!-- 修改后的网站标题区域 -->
       <div class="flex items-center" :class="{'mb-4 pl-2': !isCollapsed, 'py-3 justify-center': isCollapsed}">
         <i class="fas fa-globe text-purple-500 text-base"></i>
-        <span 
+        <!-- 添加 router-link 实现跳转 -->
+        <router-link to="/"
           class="ml-2 font-bold text-purple-600 dark:text-purple-400"
           :class="{ 'hidden': isCollapsed }"
         >
           Simple NAV
-        </span>
+        </router-link>
       </div>
 
       <ul>
@@ -55,6 +56,17 @@
       >
         <i class="fas" :class="isCollapsed ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
       </button>
+      <!-- 在侧边栏底部添加 -->
+      <!-- 修改此处，移除 p-4 内边距 -->
+      <div class="mt-auto">
+        <router-link 
+          to="/about" 
+          class="flex items-center w-full p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-800 dark:text-gray-200"
+        >
+          <i class="fas fa-info-circle mr-0.1"></i>
+          <span class="ml-2" :class="{ 'hidden': isCollapsed }">关于本站</span>
+        </router-link>
+      </div>
     </aside>
   </div>
 </template>
@@ -86,10 +98,17 @@ export default {
     },
     getCategoryIcon(category) {
       const iconMap = {
-        '在线工具': 'fa-tools',
-        '个人博客': 'fa-blog',
+        '在线工具': 'fa-solid fa-wrench',
+        '个人博客': 'fa-solid fa-blog',
         '影视在线': 'fa-solid fa-video',
-        'AI语言大模型': 'fa-solid fa-robot',
+        'AI大模型': 'fa-solid fa-fire',
+        '网络存储': 'fa-solid fa-cloud',
+        '素材网站': 'fa-solid fa-image',
+        '灵感图库': 'fa-solid fa-palette',
+        '建筑网站': 'fa-solid fa-building',
+        'AI音视频': 'fa-solid fa-video',
+        'AI绘画': 'fa-solid fa-palette',
+        '破解资源': 'fa-solid fa-key',
         // 添加更多分类图标映射
       };
       return iconMap[category] || 'fa-question-circle';

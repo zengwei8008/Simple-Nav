@@ -49,7 +49,9 @@ export default {
       searchQuery: '',
       allItems: [],
       darkMode: localStorage.getItem('darkMode') === 'true',
-      isSidebarCollapsed: window.innerWidth < 768
+      isSidebarCollapsed: window.innerWidth < 768,
+      // 新增 categories 属性
+      categories: []
     }
   },
   computed: {
@@ -76,6 +78,8 @@ export default {
       
       try {
         this.allItems = await fetchData();
+        // 初始化 categories
+        this.categories = [...new Set(this.allItems.map(item => item.category))];
         console.log('搜索数据:', {
           query: this.searchQuery,
           items: this.allItems,

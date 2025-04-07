@@ -1,5 +1,7 @@
 <template>
   <div :class="{ 'dark': darkMode }" class="h-screen flex flex-col">
+    <!-- 新增路由出口 -->
+    <router-view></router-view>
     <div class="flex flex-1 overflow-hidden relative">
       <Sidebar 
         :categories="categories" 
