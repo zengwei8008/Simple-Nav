@@ -2386,3 +2386,6 @@ node_modules/vue-router/dist/vue-router.node.mjs
 node_modules/vue-router/dist/vue-router.prod.cjs
 node_modules/vue-router/vetur/attributes.json
 node_modules/vue-router/vetur/tags.json
+node_modules/vite/dist/node/chunks/dep-845e3752.js
+node_modules/vite/dist/node/chunks/dep-5215c85e.js
+node_modules/vite/dist/node/chunks/dep-faa9987b.js

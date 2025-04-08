@@ -87,12 +87,29 @@ export default {
       this.selectedCategory = category;
     },
     toggleDarkMode() {
-      this.darkMode = !this.darkMode;
-      document.body.classList.toggle('dark', this.darkMode); // 新增：同步body类
-      localStorage.setItem('darkMode', this.darkMode);
+      this.darkMode = !this.darkMode
+      // 强制完全替换class而不是toggle
+      if (this.darkMode) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      localStorage.setItem('darkMode', this.darkMode)
+      console.log('强制设置后的class:', document.documentElement.classList)
     },
-    toggleSidebar() {
-      this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    mounted() {
+      // 修复初始化逻辑
+      if (this.darkMode) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      console.log('修正后的html元素class:', document.documentElement.classList)
+      // 添加事件监听
+      document.addEventListener('click', this.handleGlobalClick);
+      // 添加窗口大小变化监听
+      window.addEventListener('resize', this.handleResize);
+      // 其他事件监听保持不变
     },
     handleGlobalClick(event) {
       const sidebar = this.$el.querySelector('.sidebar-container');
@@ -109,9 +126,16 @@ export default {
     }
   },
   created() {
-    this.loadData();
+    console.log('初始化暗黑模式状态:', 
+      `从localStorage获取: ${localStorage.getItem('darkMode')}`, 
+      `计算后状态: ${this.darkMode}`
+    )
+    this.loadData()
   },
+
   mounted() {
+    console.log('挂载时html元素class:', document.documentElement.classList)
+    console.log('当前生效的暗黑模式:', document.documentElement.classList.contains('dark'))
     // 添加事件监听
     document.addEventListener('click', this.handleGlobalClick);
     // 添加窗口大小变化监听

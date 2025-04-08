@@ -7,15 +7,15 @@
           @toggle-sidebar="toggleSidebar"
         />
         <main class="flex-1 flex flex-col p-4 overflow-y-auto">
-          <div class="flex-grow">
-            <h1 class="text-3xl font-bold mb-6 dark:text-white">关于 Simple NAV</h1>
-            <div class="prose dark:prose-invert max-w-3xl">
+          <div class="flex-grow max-w-5xl mx-auto w-full">
+            <h1 class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400">关于 Simple NAV</h1>
+            <div class="prose dark:prose-invert">
               <div class="grid grid-cols-2 gap-6 mb-8">
                 <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                   <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
                   <h3 class="text-xl font-semibold mb-2">项目简介</h3>
                   <p class="text-gray-600 dark:text-gray-300">
-                    一个简洁高效的导航站点，全AI开发，不写一行代码，也不懂一点代码。
+                    一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。
                   </p>
                 </div>
                 
@@ -49,7 +49,7 @@
                 <h3 class="text-xl font-semibold mb-2">关于作者</h3>
                 <div class="text-gray-600 dark:text-gray-300 space-y-2">
                   <p>🕴️ 开发者：水常（Shui Chang）</p>
-                  <p>🚀 带娃建筑师 | AI技术学习者 | 男人到老是少年</p>
+                  <p>🚀 带娃建筑师 | AI技术学习者 | 男人至死是少年</p>
                   <p>🌐 个人博客： 
                     <a 
                       href="https://blog.jianzhugo.cn" 
@@ -59,7 +59,7 @@
                       建筑G博客
                     </a>
                   </p>
-                  <p>💰 另一AI网页： 
+                  <p>💰 另一AI网页成品： 
                     <a 
                       href="https://donate.jianzhugo.cn" 
                       target="_blank"
