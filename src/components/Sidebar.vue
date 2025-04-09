@@ -109,7 +109,9 @@ export default {
         'AI音视频': 'fa-solid fa-video',
         'AI绘画': 'fa-solid fa-palette',
         '破解资源': 'fa-solid fa-key',
-        '去上平台': 'fa-solid fa-globe',
+        '云上平台': 'fa-solid fa-cloud-upload-alt',
+        '网站相关': 'fa-solid fa-wifi',
+        '杂项工具': 'fa-solid fa-cogs',
         // 添加更多分类图标映射
       };
       return iconMap[category] || 'fa-question-circle';
