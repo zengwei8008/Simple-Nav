@@ -90,6 +90,10 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    // 添加 toggleSidebar 方法
+    toggleSidebar() {
+      this.isSidebarCollapsed = !this.isSidebarCollapsed;
     }
   },
   async created() {

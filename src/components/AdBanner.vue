@@ -33,7 +33,7 @@ export default {
     },
     content: {
       type: String,
-      default: '上面是常用标签，在维基云表格中设置排序'
+      default: '上面是前十个卡片，可在表格中设置排序'
     }
   }
 }
