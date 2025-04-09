@@ -1,5 +1,6 @@
 <template>
-  <div :class="{ 'dark': darkMode }" class="h-screen flex flex-col">
+  <!-- 移除顶层dark类绑定 -->
+  <div class="h-screen flex flex-col">
     <div class="flex flex-1 overflow-hidden relative">
       <Sidebar 
         :categories="categories" 

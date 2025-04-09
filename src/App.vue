@@ -1,6 +1,6 @@
 <template>
-  <div :class="{ 'dark': darkMode }" class="h-screen flex flex-col">
-    <!-- 新增路由出口 -->
+  <!-- 移除顶层div的dark类绑定 -->
+  <div class="h-screen flex flex-col">
     <router-view></router-view>
     <div class="flex flex-1 overflow-hidden relative">
       <Sidebar 
@@ -88,15 +88,17 @@ export default {
     },
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
-      document.body.classList.toggle('dark', this.darkMode); // 新增：同步body类
+      // 修改为同步到html元素
+      document.documentElement.classList.toggle('dark', this.darkMode);
       localStorage.setItem('darkMode', this.darkMode);
     },
     toggleSidebar() {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
     },
     handleGlobalClick(event) {
-      const sidebar = this.$el.querySelector('.sidebar-container');
-      const cards = this.$el.querySelectorAll('.card-container');
+      // 改用document.querySelector获取元素
+      const sidebar = document.querySelector('.sidebar-container');
+      const cards = document.querySelectorAll('.card-container');
       
       // 只重置分类，不影响样式
       if (!sidebar.contains(event.target) && 
@@ -117,6 +119,8 @@ export default {
     // 添加窗口大小变化监听
     window.addEventListener('resize', this.handleResize);
     // 其他事件监听保持不变
+    // 初始化时同步到html元素
+    document.documentElement.classList.toggle('dark', this.darkMode);
   },
   beforeUnmount() {
     // 移除事件监听
