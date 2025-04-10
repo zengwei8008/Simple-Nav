@@ -35,13 +35,13 @@
             <!-- 修改提示框为横向布局 -->
             <div 
               v-if="hoveredCategory && isCollapsed"
-              class="absolute left-full ml-2 px-2 py-1 bg-gray-700 dark:bg-gray-200 text-white dark:text-gray-800 text-sm rounded-md shadow-lg z-50 whitespace-nowrap"
+              class="absolute left-full ml-2 px-2 py-1 bg-gray-600 dark:bg-gray-200 text-white dark:text-gray-800 text-sm rounded-md shadow-md z-50 whitespace-nowrap"
               :style="{ top: tooltipPosition }"
             >
               <div class="relative">
                 {{ hoveredCategory }}
                 <!-- 修改箭头方向 -->
-                <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 dark:bg-gray-200 transform rotate-45"></div>
+                <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-600 dark:bg-gray-200 transform rotate-45"></div>
               </div>
             </div>
           </button>
