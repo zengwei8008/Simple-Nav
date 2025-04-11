@@ -1,7 +1,6 @@
 <template>
-  <!-- 移除顶层div的dark类绑定 -->
   <div class="h-screen flex flex-col">
-    <router-view></router-view>
+    <router-view :categories="categories"></router-view>  <!-- 传递分类数据 -->
     <div class="flex flex-1 overflow-hidden relative">
       <Sidebar 
         :categories="categories" 
@@ -14,7 +13,17 @@
         <Navbar :darkMode="darkMode" @toggle-dark-mode="toggleDarkMode" class="mb-6"/>
         
         <div class="flex-grow">
-          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div 
+            class="grid gap-4" 
+            :class="{
+              'grid-cols-2 md:grid-cols-3': columns === 3,
+              'grid-cols-2 md:grid-cols-4': columns === 4,
+              'grid-cols-2 md:grid-cols-5': columns === 5,
+              'grid-cols-2 md:grid-cols-6': columns === 6,
+              'grid-cols-2 md:grid-cols-7': columns === 7,
+              'grid-cols-2 md:grid-cols-8': columns === 8
+            }"
+          >
             <template v-for="(item, index) in filteredItems" :key="item.id">
               <!-- 卡片必须放在广告条件判断之前 -->
               <Card :item="item" />
@@ -59,11 +68,12 @@ export default {
   },
   data() {
     return {
+      columns: parseInt(localStorage.getItem('columns')) || 5, // 修复：确保转换为数字类型
       items: [],
       categories: [],
       selectedCategory: null,
       darkMode: localStorage.getItem('darkMode') === 'true',
-      isSidebarCollapsed: window.innerWidth < 768 // 根据屏幕宽度初始化侧边栏状态
+      isSidebarCollapsed: window.innerWidth < 768, // 初始化时根据屏幕宽度判断
     };
   },
   computed: {
@@ -107,20 +117,40 @@ export default {
       }
     },
     handleResize() {
-      this.isSidebarCollapsed = window.innerWidth < 768;
-    }
+      // 强制移动端侧边栏保持收起状态
+      this.isSidebarCollapsed = window.innerWidth < 768
+      // 添加调试日志（可选）
+      console.log('窗口尺寸变化:', window.innerWidth, '侧边栏状态:', this.isSidebarCollapsed)
+    },
   },
   created() {
     this.loadData();
   },
   mounted() {
-    // 添加事件监听
-    document.addEventListener('click', this.handleGlobalClick);
+    // 初始化列数设置
+    const savedColumns = localStorage.getItem('columns')
+    if (savedColumns) {
+      this.columns = parseInt(savedColumns)
+    }
+    
+    // 初始化背景设置
+    const savedBg = localStorage.getItem('background')
+    const savedImage = localStorage.getItem('backgroundImage')
+    
+    if (savedBg) {
+      document.body.style.backgroundColor = savedBg
+    } else if (savedImage) {
+      document.body.style.backgroundImage = `url('${savedImage}')`
+      document.body.style.backgroundSize = 'cover'
+      document.body.style.backgroundPosition = 'center'
+      document.body.style.backgroundRepeat = 'no-repeat'
+    }
     // 添加窗口大小变化监听
-    window.addEventListener('resize', this.handleResize);
-    // 其他事件监听保持不变
-    // 初始化时同步到html元素
-    document.documentElement.classList.toggle('dark', this.darkMode);
+    window.addEventListener('resize', this.handleResize)
+    // 初始化时应用移动端状态
+    if (window.innerWidth < 768) {
+      this.isSidebarCollapsed = true
+    }
   },
   beforeUnmount() {
     // 移除事件监听

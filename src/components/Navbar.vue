@@ -49,6 +49,13 @@
     
     <!-- 右侧按钮区域 -->
     <div class="flex items-center gap-3">
+      <!-- 新增设置按钮 -->
+      <router-link 
+        to="/settings"
+        class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+      >
+        <i class="fas fa-cog hover:rotate-90 transition-transform duration-300"></i>
+      </router-link>
       <!-- 新增GitHub图标 -->
       <a 
         href="https://github.com/jianzhugo/Simple-Nav" 
