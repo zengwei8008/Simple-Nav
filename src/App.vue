@@ -106,14 +106,17 @@ export default {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
     },
     handleGlobalClick(event) {
-      // 改用document.querySelector获取元素
-      const sidebar = document.querySelector('.sidebar-container');
+      // 确保点击目标不是侧边栏或卡片
+      const sidebar = this.$refs.sidebar?.$el || document.querySelector('.sidebar-container');
       const cards = document.querySelectorAll('.card-container');
       
-      // 只重置分类，不影响样式
-      if (!sidebar.contains(event.target) && 
+      // 添加调试日志
+      console.log('点击目标:', event.target);
+      
+      if (!sidebar?.contains(event.target) && 
           !Array.from(cards).some(card => card.contains(event.target))) {
         this.selectedCategory = null;
+        console.log('已重置分类');
       }
     },
     handleResize() {
@@ -147,6 +150,8 @@ export default {
     }
     // 添加窗口大小变化监听
     window.addEventListener('resize', this.handleResize)
+    // 确保正确添加事件监听
+    document.addEventListener('click', this.handleGlobalClick);
     // 初始化时应用移动端状态
     if (window.innerWidth < 768) {
       this.isSidebarCollapsed = true

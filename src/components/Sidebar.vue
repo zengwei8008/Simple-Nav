@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-full">
+  <div class="relative h-full" ref="sidebar">
     <aside 
       class="sidebar-container bg-white dark:bg-gray-800 rounded-lg shadow-lg h-full overflow-y-auto transition-all duration-300"
       :class="{
@@ -11,11 +11,17 @@
       
       <!-- 修改后的网站标题区域 -->
       <div class="flex items-center" :class="{'mb-4 pl-2': !isCollapsed, 'py-3 justify-center': isCollapsed}">
-        <i class="fas fa-globe text-purple-500 text-base"></i>
+        <router-link 
+          to="/"
+          @click.native="resetCategory">
+         <i class="fas fa-globe text-purple-500 text-base"></i>
+        </router-link>
         <!-- 添加 router-link 实现跳转 -->
-        <router-link to="/"
+        <router-link 
+          to="/"
           class="ml-2 font-bold text-purple-600 dark:text-purple-400"
           :class="{ 'hidden': isCollapsed }"
+          @click.native="resetCategory"
         >
           Simple NAV
         </router-link>
@@ -70,7 +76,6 @@
     </aside>
   </div>
 </template>
-
 <script>
 export default {
   props: ['categories', 'isCollapsed'],
@@ -115,6 +120,9 @@ export default {
         // 添加更多分类图标映射
       };
       return iconMap[category] || 'fa-question-circle';
+    },
+    resetCategory() {
+      this.$emit('select-category', null); // 发送null表示重置分类
     },
   },
 };
