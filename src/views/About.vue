@@ -1,15 +1,14 @@
 <template>
-  <!-- 移除顶层dark类绑定 -->
   <div class="h-screen flex flex-col">
     <div class="flex flex-1 overflow-hidden relative">
-      <Sidebar 
-        :categories="categories" 
-        :isCollapsed="isSidebarCollapsed"
-        @toggle-sidebar="toggleSidebar"
-      />
       <main class="flex-1 flex flex-col p-4 overflow-y-auto">
         <div class="flex-grow max-w-5xl mx-auto w-full">
-          <h1 class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400">关于 Simple NAV</h1>
+          <h1 
+            class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
+            @click="$router.push('/')"
+          >
+            关于 Simple NAV
+          </h1>
           <div class="prose dark:prose-invert">
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
@@ -100,32 +99,15 @@
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue'
-import Footer from '../components/Footer.vue'
-import { fetchData } from '../api/fetchData';
+import Footer from '../components/Footer.vue';
 
 export default {
-  components: { Sidebar, Footer },
+  components: { Footer },
   data() {
     return {
-      darkMode: localStorage.getItem('darkMode') === 'true',
-      isSidebarCollapsed: window.innerWidth < 768,
-      categories: [] // 如果侧边栏需要可以添加实际分类数据
+      darkMode: localStorage.getItem('darkMode') === 'true'
     }
-  },
-  methods: {
-    toggleSidebar() {
-      this.isSidebarCollapsed = !this.isSidebarCollapsed
-    }
-  },
-  async created() {
-    try {
-      // 获取与主应用相同的数据
-      const data = await fetchData();
-      this.categories = [...new Set(data.map(item => item.category))];
-    } catch (error) {
-      console.error('分类数据加载失败:', error);
-    }
-  },
+  }
+  // 完全移除created钩子和categories数据
 }
 </script>

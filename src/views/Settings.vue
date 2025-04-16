@@ -1,20 +1,18 @@
 <template>
-  <!-- 使用与App.vue相同的布局结构 -->
   <div class="h-screen flex flex-col">
     <div class="flex flex-1 overflow-hidden relative">
-      <Sidebar 
-        :categories="categories" 
-        :isCollapsed="isSidebarCollapsed"
-        @toggle-sidebar="toggleSidebar"
-      />
       <main class="flex-1 flex flex-col p-4 overflow-y-auto">
-        <!-- 使用与App.vue相同的Navbar -->
-        <Navbar :darkMode="darkMode" @toggle-dark-mode="toggleDarkMode" class="mb-6"/>
+        <!-- 移除Navbar组件 -->
         
-        <!-- 设置页面专属内容 -->
         <div class="flex-grow">
           <div class="max-w-4xl mx-auto space-y-8">
-            <h2 class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-8">系统设置</h2>
+            <!-- 修改标题样式为居中 -->
+            <h2 
+              class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-8 text-center hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
+              @click="$router.push('/')"
+            >
+              系统设置
+            </h2>
             
             <!-- 背景颜色设置 -->
             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
@@ -115,24 +113,22 @@
 </template>
 
 <script>
-import Navbar from '../components/Navbar.vue'
-import Sidebar from '../components/Sidebar.vue'
-import { fetchData } from '../api/fetchData';  // 添加导入
+// 移除Navbar导入
+import Footer from '../components/Footer.vue'
 
 export default {
-  components: { Navbar, Sidebar },
-  props: ['categories'],  // 添加props接收分类数据
+  components: { Footer }, // 移除Navbar组件
   data() {
     return {
       customColorHex: localStorage.getItem('customColor') || '',
       backgroundImage: localStorage.getItem('backgroundImage') || '',
       darkMode: localStorage.getItem('darkMode') === 'true',
-      isSidebarCollapsed: window.innerWidth < 768,
       backgroundColors: ['#ffffff', '#f3f4f6', '#fef3c7', '#f0fdf4', '#f1f5f9', '#bfc9df'],
       selectedBg: localStorage.getItem('background') || '#ffffff',
       columns: localStorage.getItem('columns') || 5
     }
   },
+  // 移除与侧边栏相关的所有方法和props
   methods: {
     mounted() {  // 确保这是直接的方法，不是嵌套在methods中的
       // 初始化背景设置
