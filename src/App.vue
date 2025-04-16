@@ -105,19 +105,17 @@ export default {
     toggleSidebar() {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
     },
+    // 可以移除的冗余代码
     handleGlobalClick(event) {
-      // 确保点击目标不是侧边栏或卡片
-      const sidebar = this.$refs.sidebar?.$el || document.querySelector('.sidebar-container');
-      const cards = document.querySelectorAll('.card-container');
-      
-      // 添加调试日志
-      console.log('点击目标:', event.target);
-      
-      if (!sidebar?.contains(event.target) && 
-          !Array.from(cards).some(card => card.contains(event.target))) {
-        this.selectedCategory = null;
-        console.log('已重置分类');
-      }
+    // 改用document.querySelector获取元素
+    const sidebar = document.querySelector('.sidebar-container');
+    const cards = document.querySelectorAll('.card-container');
+    
+    // 只重置分类，不影响样式
+    if (!sidebar.contains(event.target) && 
+        !Array.from(cards).some(card => card.contains(event.target))) {
+    this.selectedCategory = null;
+    }
     },
     handleResize() {
       // 强制移动端侧边栏保持收起状态
@@ -125,6 +123,11 @@ export default {
       // 添加调试日志（可选）
       console.log('窗口尺寸变化:', window.innerWidth, '侧边栏状态:', this.isSidebarCollapsed)
     },
+    watch: {
+      '$route.query.category'(newCategory) {
+        this.selectedCategory = newCategory || null;
+      }
+    }
   },
   created() {
     this.loadData();

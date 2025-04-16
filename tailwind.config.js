@@ -7,8 +7,9 @@ module.exports = {
   safelist: [
     { pattern: /grid-cols-[3-8]/ }
   ],
+  // 可以移除的冗余配置
   corePlugins: {
     // 启用背景透明度
-    backgroundOpacity: true,
+    backgroundOpacity: true,  // 新版本Tailwind已内置此功能
   }
 }

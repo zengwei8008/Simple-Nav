@@ -6,6 +6,7 @@
         :categories="categories" 
         :isCollapsed="isSidebarCollapsed"
         @toggle-sidebar="toggleSidebar"
+        @select-category="selectCategory"
       />
       <main class="flex-1 flex flex-col p-4 overflow-y-auto">
         <Navbar :darkMode="darkMode" @toggle-dark-mode="toggleDarkMode" class="mb-6"/>
@@ -95,6 +96,9 @@ export default {
     // 添加 toggleSidebar 方法
     toggleSidebar() {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    }
+    ,selectCategory(category) {
+      this.$router.push({ path: '/', query: { category } });
     }
   },
   async created() {
