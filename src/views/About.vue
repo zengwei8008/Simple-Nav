@@ -59,7 +59,7 @@
               <div class="text-gray-600 dark:text-gray-300 space-y-2">
                 <p>🕴️ 开发者：水常（Shui Chang）</p>
                 <p>🚀 带娃建筑师 | AI技术学习者 | 生命在于折腾</p>
-                <p>🌐 个人主页： 
+                <p>🏠 个人主页： 
                   <a 
                     href="https://jianzhugo.cn" 
                     target="_blank"
