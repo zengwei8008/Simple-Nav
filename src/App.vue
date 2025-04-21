@@ -98,8 +98,11 @@ export default {
     },
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
-      // 修改为同步到html元素
-      document.documentElement.classList.toggle('dark', this.darkMode);
+      if (this.darkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
       localStorage.setItem('darkMode', this.darkMode);
     },
     toggleSidebar() {

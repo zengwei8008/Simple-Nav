@@ -15,7 +15,16 @@
                 <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
                 <h3 class="text-xl font-semibold mb-2">项目简介</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。
+                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。主要为自己开发使用。
+                </p>
+                <p> 
+                  <a 
+                    href="https://vika.cn/share/shrxaWuBbbn6cKWBwvXgV" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    维基云表格地址
+                  </a>
                 </p>
               </div>
               
@@ -49,7 +58,16 @@
               <h3 class="text-xl font-semibold mb-2">关于作者</h3>
               <div class="text-gray-600 dark:text-gray-300 space-y-2">
                 <p>🕴️ 开发者：水常（Shui Chang）</p>
-                <p>🚀 带娃建筑师 | AI技术学习者 | 男人至死是少年</p>
+                <p>🚀 带娃建筑师 | AI技术学习者 | 生命在于折腾</p>
+                <p>🌐 个人主页： 
+                  <a 
+                    href="https://jianzhugo.cn" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    水常@Shui Chang
+                  </a>
+                </p>
                 <p>🌐 个人博客： 
                   <a 
                     href="https://blog.jianzhugo.cn" 
@@ -77,16 +95,16 @@
               <h3 class="text-xl font-semibold mb-2">数据统计</h3>
               <div class="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div class="text-2xl font-bold text-blue-500">完善中</div>
+                  <div class="text-2xl font-bold text-blue-500">89个</div>
                   <div class="text-sm text-gray-500">收录网站</div>
                 </div>
                 <div>
-                  <div class="text-2xl font-bold text-purple-500">98%</div>
+                  <div class="text-2xl font-bold text-purple-500">100%</div>
                   <div class="text-sm text-gray-500">可用性监测</div>
                 </div>
                 <div>
-                  <div class="text-2xl font-bold text-green-500">25/4</div>
-                  <div class="text-sm text-gray-500">实时更新</div>
+                  <div class="text-2xl font-bold text-green-500">2025-04-21</div>
+                  <div class="text-sm text-gray-500">手动更新</div>
                 </div>
               </div>
             </div>
