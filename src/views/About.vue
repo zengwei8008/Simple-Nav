@@ -15,7 +15,7 @@
                 <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
                 <h3 class="text-xl font-semibold mb-2">项目简介</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。主要为自己开发使用。
+                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。以自己的使用习惯来开发。
                 </p>
                 <p> 
                   <a 
@@ -24,6 +24,13 @@
                     class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
                   >
                     维基云表格地址
+                  </a>
+                  <a 
+                    href="https://vika.cn/workbench/fomWQp8Fd6lHE5CBKl/viwullRf3ubdS?fldM5GkwwsOFh=%2Fdefault.ico&fldXKVGVmpAnY=%E6%9D%82%E9%A1%B9%E5%B7%A5%E5%85%B7" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    网站收录申请
                   </a>
                 </p>
               </div>
