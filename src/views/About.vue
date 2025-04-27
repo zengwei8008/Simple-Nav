@@ -24,7 +24,7 @@
                     class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
                   >
                     维基云表格地址
-                  </a>
+                  </a> |                   
                   <a 
                     href="https://vika.cn/workbench/fomWQp8Fd6lHE5CBKl/viwullRf3ubdS?fldM5GkwwsOFh=%2Fdefault.ico&fldXKVGVmpAnY=%E6%9D%82%E9%A1%B9%E5%B7%A5%E5%85%B7" 
                     target="_blank"
@@ -65,7 +65,7 @@
               <h3 class="text-xl font-semibold mb-2">关于作者</h3>
               <div class="text-gray-600 dark:text-gray-300 space-y-2">
                 <p>🕴️ 开发者：水常（Shui Chang）</p>
-                <p>🚀 带娃建筑师 | AI技术学习者 | 生命在于折腾</p>
+                <p>🚀 带娃建筑师 | AI技术学习者 | 个人博主</p>
                 <p>🏠 个人主页： 
                   <a 
                     href="https://jianzhugo.cn" 
