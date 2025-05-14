@@ -3,7 +3,7 @@ const datasheetId = 'dstfGaY66aN2wyLlmX';
 const baseUrl = 'https://api.vika.cn/fusion/v1/datasheets';
 const viewId = 'viwullRf3ubdS';
 const fieldKey = 'name';
-const apiUrl = `${baseUrl}/${datasheetId}/records?viewId=${viewId}&fieldKey=${fieldKey}`;
+const apiUrl = `${baseUrl}/${datasheetId}/records?viewId=${viewId}&fieldKey=${fieldKey}&pageSize=1000`;
 const DEFAULT_ICON_URL = '/default.ico';
 
 export async function fetchData() {

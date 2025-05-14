@@ -105,7 +105,7 @@ export default {
       const iconMap = {
         '在线工具': 'fa-solid fa-wrench',
         '个人博客': 'fa-solid fa-blog',
-        '影视在线': 'fa-solid fa-video',
+        '影视在线': 'fa-solid fa-film',
         'AI大模型': 'fa-solid fa-fire',
         '网络存储': 'fa-solid fa-cloud',
         '素材网站': 'fa-solid fa-image',
