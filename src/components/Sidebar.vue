@@ -3,7 +3,7 @@
     <aside 
       class="sidebar-container bg-white dark:bg-gray-800 rounded-lg shadow-lg h-full overflow-y-auto transition-all duration-300"
       :class="{
-        'w-64 p-4': !isCollapsed,
+        'w-34 p-4': !isCollapsed,
         'min-w-[4rem] max-w-[4rem] px-2': isCollapsed
       }"
       @mouseenter="showToggle = true"
