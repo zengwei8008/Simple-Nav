@@ -15,8 +15,8 @@
     <img 
       v-if="imageUrl"
       :src="imageUrl"
-      alt="广告图片"
-      class="max-h-full max-w-full object-contain"
+      alt="建筑G博客"
+      class="h-max w-full object-cover object-center"
     >
     <span class="text-gray-500 dark:text-gray-400 text-center break-words">
       {{ content }}
@@ -29,11 +29,11 @@ export default {
   props: {
     imageUrl: {
       type: String,
-      default: ''
+      default: ''  // 替换为实际图片URL（如https://example.com/banner.jpg）
     },
     content: {
       type: String,
-      default: '上面是前十个卡片，在表格中设置排序'
+      default: '---------- 我是一条很长很长的线 ----------'  // 留空则不显示文字
     }
   }
 }
@@ -41,9 +41,11 @@ export default {
 
 <style scoped>
 /* 强制透明背景 */
+
 .ad-container {
   background-color: transparent !important;
 }
+
 
 /* 需要悬停效果时，移除下方注释 */
 /*
