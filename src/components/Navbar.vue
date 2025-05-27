@@ -67,10 +67,10 @@
       
       <!-- 原有的暗黑模式切换按钮 -->
       <button 
-        @click="$emit('toggle-dark-mode')" 
+        @click="$emit('toggleDarkMode')" 
         class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
       >
-        <i class="fas hover:rotate-12 transition-transform" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+        <i class="fas hover:rotate-12 transition-transform" :class="darkMode ? 'fa-sun' : 'fa-moon' "></i>
       </button>
     </div>
   </nav>

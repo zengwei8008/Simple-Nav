@@ -14,7 +14,7 @@
         
         <div class="flex-grow">
           <div 
-            class="grid gap-4" 
+            class="grid gap-6" 
             :class="{
               'grid-cols-2 md:grid-cols-3': columns === 3,
               'grid-cols-2 md:grid-cols-4': columns === 4,
@@ -98,11 +98,13 @@ export default {
     },
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
+      console.log('黑暗模式切换，当前状态：', this.darkMode);
       if (this.darkMode) {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
+      console.log('根元素class列表：', document.documentElement.className);
       localStorage.setItem('darkMode', this.darkMode);
     },
     toggleSidebar() {
