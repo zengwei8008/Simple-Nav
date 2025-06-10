@@ -58,20 +58,14 @@
       </router-link>
       <!-- 新增GitHub图标 -->
       <a 
-        href="https://github.com/jianzhugo/Simple-Nav" 
+        href="https://www.zengxj.cn" 
         target="_blank"
         class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
       >
         <i class="fab fa-github text-xl hover:rotate-12 transition-transform"></i>
       </a>
       
-      <!-- 原有的暗黑模式切换按钮 -->
-      <button 
-        @click="$emit('toggleDarkMode')" 
-        class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
-      >
-        <i class="fas hover:rotate-12 transition-transform" :class="darkMode ? 'fa-sun' : 'fa-moon' "></i>
-      </button>
+
     </div>
   </nav>
 </template>
