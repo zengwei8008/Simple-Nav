@@ -116,7 +116,7 @@ export default {
         '破解资源': 'fa-solid fa-key',
         '云上平台': 'fa-solid fa-cloud-upload-alt',
         '网站相关': 'fa-solid fa-wifi',
-        '杂项工具': 'fa-solid fa-cogs',
+        '小记收藏': 'fa-solid fa-cogs',
         // 添加更多分类图标映射
       };
       return iconMap[category] || 'fa-question-circle';
