@@ -35,11 +35,8 @@
                 </p>
               </div>
               
-              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                 <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
     
-              </div>
-            </div>
             
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
               <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
