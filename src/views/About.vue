@@ -7,10 +7,9 @@
             class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
             @click="$router.push('/')"
           >
-            关于本站
+            关于 Simple NAV
           </h1>
-  
-        <div class="prose dark:prose-invert">
+          <div class="prose dark:prose-invert">
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                 <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
@@ -34,9 +33,9 @@
                     网站收录申请
                   </a>
                 </p>
-              </div>       
+              </div>
+              
 
-            
 
             
             <!-- 新增关于作者区块 -->
