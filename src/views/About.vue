@@ -7,33 +7,9 @@
             class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
             @click="$router.push('/')"
           >
-            关于 Simple NAV
+            关于本站
           </h1>
-          <div class="prose dark:prose-invert">
-            <div class="grid grid-cols-2 gap-6 mb-8">
-              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
-                <h3 class="text-xl font-semibold mb-2">项目简介</h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。以自己的使用习惯来开发。
-                </p>
-                <p> 
-                  <a 
-                    href="https://vika.cn/share/shrxaWuBbbn6cKWBwvXgV" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    维基云表格地址
-                  </a> |                   
-                  <a 
-                    href="https://vika.cn/workbench/fomWQp8Fd6lHE5CBKl/viwullRf3ubdS?fldM5GkwwsOFh=%2Fdefault.ico&fldXKVGVmpAnY=%E6%9D%82%E9%A1%B9%E5%B7%A5%E5%85%B7" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    网站收录申请
-                  </a>
-                </p>
-              </div>
+
               
               <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                 <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
