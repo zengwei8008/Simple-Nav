@@ -43,8 +43,7 @@
             </div>
             
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
-              <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
-              <h3 class="text-xl font-semibold mb-2">功能特点</h3>
+
 
             </div>
             
