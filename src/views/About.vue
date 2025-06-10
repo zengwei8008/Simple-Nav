@@ -1,30 +1,53 @@
 <template>
-  <div class="simple-contact-container">
-    <!-- 微信联系方式区块 -->
-    <div class="contact-card wechat-card" 
-         @mouseenter="hover.wechat = true" 
-         @mouseleave="hover.wechat = false"
-         :class="{'hovered': hover.wechat}">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.5 14C7.4 14 6.5 13.1 6.5 12C6.5 10.9 7.4 10 8.5 10C9.6 10 10.5 10.9 10.5 12C10.5 13.1 9.6 14 8.5 14ZM15.5 14C14.4 14 13.5 13.1 13.5 12C13.5 10.9 14.4 10 15.5 10C16.6 10 17.5 10.9 17.5 12C17.5 13.1 16.6 14 15.5 14Z" fill="currentColor"/>
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20Z" fill="currentColor"/>
-        </svg>
-      </div>
-      <div class="card-content">
-        <h3>微信联系</h3>
-        <p>{{ wechatId }}</p>
-        <transition name="fade">
-          <div class="qr-popup" v-if="hover.wechat">
-            <img :src="qrCode" alt="微信二维码">
-            <p>扫码添加好友</p>
-          </div>
-        </transition>
-      </div>
-      <div class="card-hover-indicator"></div>
-    </div>
-
-    <!-- 站点运行时间区块 -->
+  <div class="h-screen flex flex-col">
+    <div class="flex flex-1 overflow-hidden relative">
+      <main class="flex-1 flex flex-col p-4 overflow-y-auto">
+        <div class="flex-grow max-w-5xl mx-auto w-full">
+          <h1 
+            class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
+            @click="$router.push('/')"
+          >
+            关于 Simple NAV
+          </h1>
+          <div class="prose dark:prose-invert">
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
+                <h3 class="text-xl font-semibold mb-2">项目简介</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。以自己的使用习惯来开发。
+                </p>
+                <p> 
+                  <a 
+                    href="https://vika.cn/share/shrxaWuBbbn6cKWBwvXgV" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    维基云表格地址
+                  </a> |                   
+                  <a 
+                    href="https://vika.cn/workbench/fomWQp8Fd6lHE5CBKl/viwullRf3ubdS?fldM5GkwwsOFh=%2Fdefault.ico&fldXKVGVmpAnY=%E6%9D%82%E9%A1%B9%E5%B7%A5%E5%85%B7" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    网站收录申请
+                  </a>
+                </p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
+                <h3 class="text-xl font-semibold mb-2">技术栈</h3>
+                <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
+                  <li>Vue 3 + Composition API</li>
+                  <li>Tailwind CSS</li>
+                  <li>Vue Router</li>
+                  <li>Font Awesome</li>
+                </ul>
+              </div>
+            </div>
+            
+   <!-- 站点运行时间区块 -->
     <div class="contact-card runtime-card" 
          @mouseenter="hover.runtime = true" 
          @mouseleave="hover.runtime = false"
@@ -47,188 +70,81 @@
       </transition>
     </div>
   </div>
+            
+            <!-- 新增关于作者区块 -->
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
+              <i class="fas fa-user-circle text-red-500 text-xl mb-2"></i>
+              <h3 class="text-xl font-semibold mb-2">关于作者</h3>
+              <div class="text-gray-600 dark:text-gray-300 space-y-2">
+                <p>🕴️ 开发者：水常（Shui Chang）</p>
+                <p>🚀 带娃建筑师 | AI技术学习者 | 个人博主</p>
+                <p>🏠 个人主页： 
+                  <a 
+                    href="https://jianzhugo.cn" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    水常@Shui Chang
+                  </a>
+                </p>
+                <p>🌐 个人博客： 
+                  <a 
+                    href="https://blog.jianzhugo.cn" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    建筑G博客
+                  </a>
+                </p>
+                <p>💰 另一AI网页成品： 
+                  <a 
+                    href="https://donate.jianzhugo.cn" 
+                    target="_blank"
+                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
+                  >
+                    打赏页面
+                  </a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- 数据统计区块 -->
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+              <i class="fas fa-chart-line text-green-500 text-xl mb-2"></i>
+              <h3 class="text-xl font-semibold mb-2">数据统计</h3>
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div class="text-2xl font-bold text-blue-500">105个</div>
+                  <div class="text-sm text-gray-500">收录网站</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-purple-500">100%</div>
+                  <div class="text-sm text-gray-500">可用性监测</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-green-500">2025-05-14</div>
+                  <div class="text-sm text-gray-500">手动更新</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer class="mt-8" />
+      </main>
+    </div>
+  </div>
 </template>
 
 <script>
+import Footer from '../components/Footer.vue';
+
 export default {
-  name: 'SimpleContactInfo',
+  components: { Footer },
   data() {
     return {
-      wechatId: 'your-wechat-id',
-      qrCode: 'https://via.placeholder.com/150', // 替换为你的二维码图片
-      startDate: '2023-01-01', // 站点开始日期
-      hover: {
-        wechat: false,
-        runtime: false
-      }
-    }
-  },
-  computed: {
-    runtime() {
-      const start = new Date(this.startDate)
-      const now = new Date()
-      
-      const diffTime = now - start
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
-      
-      const years = Math.floor(diffDays / 365)
-      const months = Math.floor((diffDays % 365) / 30)
-      const days = diffDays % 30
-      
-      let result = ''
-      if (years > 0) result += `${years}年`
-      if (months > 0) result += `${months}个月`
-      if (days > 0 || result === '') result += `${days}天`
-      
-      return result
+      darkMode: localStorage.getItem('darkMode') === 'true'
     }
   }
+  // 完全移除created钩子和categories数据
 }
 </script>
-
-<style scoped>
-.simple-contact-container {
-  max-width: 400px;
-  margin: 0 auto;
-  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.contact-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  background-color: #f8f8f8;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.contact-card.hovered {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
-.card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 16px;
-  transition: all 0.3s ease;
-}
-
-.wechat-card .card-icon {
-  background-color: #07C160;
-  color: white;
-}
-
-.runtime-card .card-icon {
-  background-color: #1989fa;
-  color: white;
-}
-
-.contact-card.hovered .card-icon {
-  transform: rotate(10deg) scale(1.1);
-}
-
-.card-content {
-  flex: 1;
-}
-
-.card-content h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 4px 0;
-  color: #333;
-}
-
-.card-content p {
-  font-size: 14px;
-  margin: 0;
-  color: #666;
-}
-
-.card-hover-indicator {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: #ff2442;
-  transition: width 0.3s ease;
-}
-
-.contact-card.hovered .card-hover-indicator {
-  width: 100%;
-}
-
-.wechat-card.hovered .card-hover-indicator {
-  background-color: #07C160;
-}
-
-.runtime-card.hovered .card-hover-indicator {
-  background-color: #1989fa;
-}
-
-.qr-popup {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  text-align: center;
-}
-
-.qr-popup img {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 8px;
-  border: 1px solid #eee;
-}
-
-.qr-popup p {
-  font-size: 12px;
-  color: #999;
-}
-
-.runtime-tooltip {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.runtime-tooltip::after {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #333;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-</style>
