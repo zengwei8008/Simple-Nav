@@ -9,9 +9,11 @@
           >
             关于 Simple NAV
           </h1>
+          <div class="prose dark:prose-invert">
+            <div class="grid grid-cols-2 gap-6 mb-8">
 
               
-   
+              
             </div>
             
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
