@@ -21,7 +21,10 @@ const routes = [
     path: '/search',
     component: SearchResults 
   },
-
+  {
+    path: '/about',
+    component: About
+  },
   {
     path: '/settings',
     component: Settings
