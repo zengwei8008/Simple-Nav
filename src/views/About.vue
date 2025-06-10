@@ -20,7 +20,7 @@
               <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
               <h3 class="text-xl font-semibold mb-2">📢 免责声明 </h3>
               <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
-                 <p>本站所有资源均来源于 网络公开资源，仅用于 个人学习、分享交流。🌍 </p>
+                 <p>⚠️本站所有资源均来源于 网络公开资源，仅用于 个人学习、分享交流。🌍 </p>
 
  <p>📌 如涉及版权问题，请 原作者或版权方 联系本站（邮箱：📧 zengwei8008@163.com），我们将在 24小时内 核实并删除相关内容。🙏 </p>
 
@@ -45,14 +45,8 @@
                   >
 曾氏小记资源网                  </a>
                 </p>
-                <p>🌐 微信： 
-                  <a 
-                    href="https://blog.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    建筑G博客
-                  </a>
+                <p>🌐 微信： sugarhe1003或zengshixj
+
                 </p>
 
               </div>
