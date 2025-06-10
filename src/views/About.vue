@@ -35,12 +35,7 @@
                 </p>
               </div>
               
-              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
-                <h3 class="text-xl font-semibold mb-2">技术栈</h3>
 
-              </div>
-            </div>
             
 
             
