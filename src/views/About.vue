@@ -35,7 +35,18 @@
                 </p>
               </div>
               
-
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
+                <h3 class="text-xl font-semibold mb-2">技术栈</h3>
+                <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
+                  <li>Vue 3 + Composition API</li>
+                  <li>Tailwind CSS</li>
+                  <li>Vue Router</li>
+                  <li>Font Awesome</li>
+                </ul>
+              </div>
+            </div>
+            
 
             
             <!-- 新增关于作者区块 -->
