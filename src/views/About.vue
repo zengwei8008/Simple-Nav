@@ -20,13 +20,13 @@
               <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
               <h3 class="text-xl font-semibold mb-2">📢 免责声明 </h3>
               <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
-                <li>本站所有资源均来源于 网络公开资源，仅用于 个人学习、分享交流。🌍
+                 <p>本站所有资源均来源于 网络公开资源，仅用于 个人学习、分享交流。🌍 </p>
 
-📌 如涉及版权问题，请 原作者或版权方 联系本站（邮箱：📧 zengwei8008@163.com），我们将在 24小时内 核实并删除相关内容。🙏
+ <p>📌 如涉及版权问题，请 原作者或版权方 联系本站（邮箱：📧 zengwei8008@163.com），我们将在 24小时内 核实并删除相关内容。🙏 </p>
 
-🔍 本站不对资源的准确性、完整性、合法性 提供任何明示或暗示的保证，访问者需自行判断并承担风险。⚠️
+ <p>🔍 本站不对资源的准确性、完整性、合法性 提供任何明示或暗示的保证，访问者需自行判断并承担风险。⚠️ </p>
 
-💖 感谢您的理解与支持！ 如有任何问题，欢迎联系~ ✨</li>
+ <p>💖 感谢您的理解与支持！ 如有任何问题，欢迎联系~ ✨</p>
 
               </ul>
             </div>
@@ -36,18 +36,16 @@
               <i class="fas fa-user-circle text-red-500 text-xl mb-2"></i>
               <h3 class="text-xl font-semibold mb-2">关于作者</h3>
               <div class="text-gray-600 dark:text-gray-300 space-y-2">
-                <p>🕴️ 开发者：水常（Shui Chang）</p>
-                <p>🚀 带娃建筑师 | AI技术学习者 | 个人博主</p>
+                <p>🕴️ 站长：曾小记</p>
                 <p>🏠 个人主页： 
                   <a 
-                    href="https://jianzhugo.cn" 
+                    href="https://zengxj.cn" 
                     target="_blank"
                     class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
                   >
-                    水常@Shui Chang
-                  </a>
+曾氏小记资源网                  </a>
                 </p>
-                <p>🌐 个人博客： 
+                <p>🌐 微信： 
                   <a 
                     href="https://blog.jianzhugo.cn" 
                     target="_blank"
@@ -56,15 +54,7 @@
                     建筑G博客
                   </a>
                 </p>
-                <p>💰 另一AI网页成品： 
-                  <a 
-                    href="https://donate.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    打赏页面
-                  </a>
-                </p>
+
               </div>
             </div>
             
