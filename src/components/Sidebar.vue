@@ -23,7 +23,7 @@
           :class="{ 'hidden': isCollapsed }"
           @click.native="resetCategory"
         >
-          Simple NAV
+          小记的导航站
         </router-link>
       </div>
 
