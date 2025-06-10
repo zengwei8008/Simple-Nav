@@ -9,30 +9,9 @@
           >
             关于本站
           </h1>
-          <div class="prose dark:prose-invert">
-            <div class="grid grid-cols-2 gap-6 mb-8">
-              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
-                <h3 class="text-xl font-semibold mb-2">项目简介</h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。以自己的使用习惯来开发。
-                </p>
-                <p> 
-
-                </p>
-              </div>
+  
               
-              <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <i class="fas fa-code text-purple-500 text-xl mb-2"></i>
-                <h3 class="text-xl font-semibold mb-2">技术栈</h3>
-                <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
-                  <li>Vue 3 + Composition API</li>
-                  <li>Tailwind CSS</li>
-                  <li>Vue Router</li>
-                  <li>Font Awesome</li>
-                </ul>
-              </div>
-            </div>
+
             
 
             
