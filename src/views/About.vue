@@ -35,9 +35,20 @@
                 </p>
               </div>
               
-
+   
+            </div>
             
-
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
+              <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
+              <h3 class="text-xl font-semibold mb-2">功能特点</h3>
+              <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
+                <li>智能本地搜索功能</li>
+                <li>响应式侧边栏布局</li>
+                <li>黑暗模式自动适配（有bug还没实现）</li>                  
+                <li>多分类资源管理</li>
+                <li>从维基云表格获取数据，无需数据库</li>
+              </ul>
+            </div>
             
             <!-- 新增关于作者区块 -->
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
