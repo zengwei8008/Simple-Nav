@@ -15,7 +15,7 @@
     <img 
       v-if="imageUrl"
       :src="imageUrl"
-      alt="建筑G博客"
+      alt="曾小记"
       class="h-max w-full object-cover object-center"
     >
     <span class="text-gray-500 dark:text-gray-400 text-center break-words">
