@@ -69,6 +69,8 @@
         </div>
       </transition>
     </div>
+            </div>
+     </div>
             
             <!-- 新增关于作者区块 -->
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
