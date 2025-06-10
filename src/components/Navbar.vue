@@ -57,13 +57,7 @@
         <i class="fas fa-cog hover:rotate-90 transition-transform duration-300"></i>
       </router-link>
       <!-- 新增GitHub图标 -->
-      <a 
-        href="https://www.zengxj.cn" 
-        target="_blank"
-        class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
-      >
-        <i class="fab fa-github text-xl hover:rotate-12 transition-transform"></i>
-      </a>
+
       
 
     </div>
