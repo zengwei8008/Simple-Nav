@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-transparent py-4 text-center text-sm text-gray-600 dark:text-gray-400">
-    <div>© {{ new Date().getFullYear() }} made with ♥️ by <a class="text-purple-600" href="https://www.zengxj.cn">曾小记</a></div>
+    <div>© {{ new Date().getFullYear() }} made by ♥️ <a class="text-purple-600" href="https://www.zengxj.cn">曾小记</a></div>
   </footer>
 </template>
 
