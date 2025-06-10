@@ -1,426 +1,273 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人空间 | 小红书风格</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 20px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #ff5a5f, #ff8e8e);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(45deg, #ff5a5f, #ff2d55);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-header {
-            padding: 25px 25px 15px;
-            position: relative;
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
-        }
-        
-        .card:nth-child(2) .card-icon {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-        }
-        
-        .card:nth-child(3) .card-icon {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-        
-        .card:nth-child(4) .card-icon {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-        
-        .card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #222;
-        }
-        
-        .card-content {
-            padding: 0 25px 25px;
-            flex-grow: 1;
-        }
-        
-        .card p {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(45deg, #ff5a5f, #ff8e8e);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 90, 95, 0.4);
-        }
-        
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 90, 95, 0.6);
-        }
-        
-        .wechat-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-        
-        .qr-code {
-            width: 120px;
-            height: 120px;
-            background: #f0f0f0;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed #ddd;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .qr-code::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%);
-            background-size: 20px 20px;
-        }
-        
-        .qr-code::after {
-            content: "微信";
-            position: absolute;
-            bottom: 10px;
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .stats {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .stat-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 15px;
-            flex: 1;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ff5a5f;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #777;
-        }
-        
-        .runtime {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ff5a5f;
-            margin: 15px 0;
-            text-align: center;
-            background: rgba(255, 90, 95, 0.1);
-            padding: 15px;
-            border-radius: 12px;
-        }
-        
-        .counter {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ff5a5f;
-            margin: 15px 0;
-            text-align: center;
-            background: rgba(255, 90, 95, 0.1);
-            padding: 15px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            color: #666;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h1>我的个人空间</h1>
-            </div>
-            <p class="subtitle">分享生活点滴 · 记录美好时光 · 连接志同道合的朋友</p>
-        </header>
-        
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h2>个人主页</h2>
-                </div>
-                <div class="card-content">
-                    <p>访问我的个人主页，了解更多关于我的故事、兴趣和专业领域。我会定期分享生活感悟、旅行见闻和创作内容。</p>
-                    <a href="#" class="btn">访问主页</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fab fa-weixin"></i>
-                    </div>
-                    <h2>联系微信</h2>
-                </div>
-                <div class="card-content">
-                    <p>扫描二维码添加我的微信，与我建立联系。期待与您交流想法、分享经验或探讨合作机会。</p>
-                    <div class="wechat-container">
-                        <div class="qr-code">
-                            <i class="fas fa-qrcode" style="font-size: 40px; color: #bbb;"></i>
-                        </div>
-                        <div>
-                            <p><strong>微信号:</strong> my_personal_space</p>
-                            <p><strong>添加备注:</strong> 小红书朋友</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h2>运行时间</h2>
-                </div>
-                <div class="card-content">
-                    <p>本站已持续运行了：</p>
-                    <div class="runtime" id="runtime">
-                        0 天 0 小时 0 分 0 秒
-                    </div>
-                    <p>从2023年1月1日开始，这个空间一直记录着我的成长轨迹和创作历程。</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h2>访客数据</h2>
-                </div>
-                <div class="card-content">
-                    <p>感谢各位朋友的关注与支持，以下是本站的访问数据：</p>
-                    
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-value" id="totalVisitors">1.2K</div>
-                            <div class="stat-label">总访问量</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value" id="todayVisitors">28</div>
-                            <div class="stat-label">今日访问</div>
-                        </div>
-                    </div>
-                    
-                    <div class="counter">
-                        <i class="fas fa-users"></i>
-                        <span id="currentVisitors">5</span> 人正在浏览
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p>© 2023 我的个人空间 | 记录生活 · 分享美好</p>
-            <p>设计灵感来自小红书，仅作个人展示使用</p>
-        </footer>
+<template>
+  <div class="xiaohongshu-profile">
+    <!-- 顶部头像和标题 -->
+    <div class="profile-header">
+      <div class="avatar" @mouseover="hoverAvatar = true" @mouseleave="hoverAvatar = false">
+        <img :src="avatar" alt="头像" :class="{ 'avatar-hover': hoverAvatar }">
+        <div class="avatar-hover-text" v-if="hoverAvatar">点击查看详情</div>
+      </div>
+      <h2 class="profile-title">{{ title }}</h2>
     </div>
 
-    <script>
-        // 运行时间计算
-        const startDate = new Date('2023-01-01T00:00:00');
-        
-        function updateRuntime() {
-            const now = new Date();
-            const diff = now - startDate;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('runtime').textContent = 
-                `${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒`;
-        }
-        
-        // 初始化运行时间
-        updateRuntime();
-        setInterval(updateRuntime, 1000);
-        
-        // 访客计数模拟
-        function updateVisitorStats() {
-            // 模拟实时访问数据变化
-            const today = Math.floor(Math.random() * 15) + 20;
-            document.getElementById('todayVisitors').textContent = today;
-            
-            // 模拟当前在线用户（5-15之间随机变化）
-            const current = Math.floor(Math.random() * 11) + 5;
-            document.getElementById('currentVisitors').textContent = current;
-        }
-        
-        // 初始化访客数据
-        updateVisitorStats();
-        setInterval(updateVisitorStats, 5000);
-        
-        // 卡片悬停效果增强
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-15px)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
-</body>
-</html>
+    <!-- 主要内容区块 -->
+    <div class="profile-content">
+      <!-- 个人主页区块 -->
+      <div class="content-block" @mouseover="hoverHomepage = true" @mouseleave="hoverHomepage = false">
+        <div class="block-icon" :class="{ 'icon-hover': hoverHomepage }">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="block-content">
+          <h3>个人主页</h3>
+          <a :href="homepage" target="_blank" class="homepage-link">{{ homepageDisplay }}</a>
+        </div>
+      </div>
+
+      <!-- 微信联系区块 -->
+      <div class="content-block" @mouseover="hoverWechat = true" @mouseleave="hoverWechat = false">
+        <div class="block-icon" :class="{ 'icon-hover': hoverWechat }">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 7.37C22 4.03 19.08 2 14.93 2H9.07C4.92 2 2 4.03 2 7.37V12.63C2 15.97 4.92 18 9.07 18H9.93C10.3 18 10.67 18.11 10.97 18.3L13.58 20.1C14.39 20.68 15.52 20.1 15.52 19.1V17.77C15.52 17.37 15.7 16.97 15.97 16.7C17.87 14.93 22 12.83 22 7.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 8.5C7.82843 8.5 8.5 7.82843 8.5 7C8.5 6.17157 7.82843 5.5 7 5.5C6.17157 5.5 5.5 6.17157 5.5 7C5.5 7.82843 6.17157 8.5 7 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8.5C17.8284 8.5 18.5 7.82843 18.5 7C18.5 6.17157 17.8284 5.5 17 5.5C16.1716 5.5 15.5 6.17157 15.5 7C15.5 7.82843 16.1716 8.5 17 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="block-content">
+          <h3>微信联系</h3>
+          <p>{{ wechat }}</p>
+          <div class="wechat-qr" v-if="hoverWechat">
+            <img :src="qrCode" alt="微信二维码">
+            <p>扫码添加微信</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 站点运行时间区块 -->
+      <div class="content-block" @mouseover="hoverRuntime = true" @mouseleave="hoverRuntime = false">
+        <div class="block-icon" :class="{ 'icon-hover': hoverRuntime }">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="block-content">
+          <h3>本站运行</h3>
+          <p>{{ runtime }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部装饰 -->
+    <div class="profile-footer">
+      <p>感谢您的访问 ❤️</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'XiaohongshuProfile',
+  data() {
+    return {
+      title: '我的个人空间',
+      avatar: 'https://via.placeholder.com/100', // 替换为你的头像URL
+      homepage: 'https://your-personal-site.com',
+      homepageDisplay: 'your-personal-site.com',
+      wechat: 'YourWeChatID',
+      qrCode: 'https://via.placeholder.com/150', // 替换为你的微信二维码URL
+      startDate: '2023-01-01', // 站点开始运行的日期
+      hoverAvatar: false,
+      hoverHomepage: false,
+      hoverWechat: false,
+      hoverRuntime: false
+    }
+  },
+  computed: {
+    runtime() {
+      const start = new Date(this.startDate)
+      const now = new Date()
+      
+      const diffTime = now - start
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
+      
+      const years = Math.floor(diffDays / 365)
+      const months = Math.floor((diffDays % 365) / 30)
+      const days = diffDays % 30
+      
+      let result = ''
+      if (years > 0) result += `${years}年`
+      if (months > 0) result += `${months}个月`
+      if (days > 0 || result === '') result += `${days}天`
+      
+      return result
+    }
+  }
+}
+</script>
+
+<style scoped>
+.xiaohongshu-profile {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #ff2442;
+  transition: all 0.3s ease;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.avatar-hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.avatar-hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 36, 66, 0.8);
+  color: white;
+  font-size: 12px;
+  padding: 4px;
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.profile-content {
+  margin: 20px 0;
+}
+
+.content-block {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.content-block:hover {
+  background-color: #fff5f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 36, 66, 0.1);
+}
+
+.block-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ffebee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: #ff2442;
+  transition: all 0.3s ease;
+}
+
+.icon-hover {
+  background-color: #ff2442;
+  color: white;
+}
+
+.block-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.block-content {
+  flex: 1;
+}
+
+.block-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.block-content p {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+
+.homepage-link {
+  color: #ff2442;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.homepage-link:hover {
+  text-decoration: underline;
+}
+
+.wechat-qr {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: center;
+}
+
+.wechat-qr img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 4px;
+}
+
+.wechat-qr p {
+  font-size: 12px;
+  color: #999;
+}
+
+.profile-footer {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  color: #999;
+  font-size: 14px;
+}
+</style>
