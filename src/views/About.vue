@@ -7,7 +7,7 @@
             class="text-3xl font-bold mb-6 text-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors cursor-pointer"
             @click="$router.push('/')"
           >
-            关于 Simple NAV
+            关于本站
           </h1>
           <div class="prose dark:prose-invert">
             <div class="grid grid-cols-2 gap-6 mb-8">
@@ -18,13 +18,16 @@
             
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
               <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
-              <h3 class="text-xl font-semibold mb-2">功能特点</h3>
+              <h3 class="text-xl font-semibold mb-2">📢 免责声明 </h3>
               <ul class="list-disc pl-4 text-gray-600 dark:text-gray-300">
-                <li>智能本地搜索功能</li>
-                <li>响应式侧边栏布局</li>
-                <li>黑暗模式自动适配（有bug还没实现）</li>                  
-                <li>多分类资源管理</li>
-                <li>从维基云表格获取数据，无需数据库</li>
+                <li>本站所有资源均来源于 网络公开资源，仅用于 个人学习、分享交流。🌍
+
+📌 如涉及版权问题，请 原作者或版权方 联系本站（邮箱：📧 zengwei8008@163.com），我们将在 24小时内 核实并删除相关内容。🙏
+
+🔍 本站不对资源的准确性、完整性、合法性 提供任何明示或暗示的保证，访问者需自行判断并承担风险。⚠️
+
+💖 感谢您的理解与支持！ 如有任何问题，欢迎联系~ ✨</li>
+
               </ul>
             </div>
             
